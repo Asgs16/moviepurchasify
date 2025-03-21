@@ -31,7 +31,7 @@ const ConfirmationPage = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = "Order Confirmation | CinemaVault";
+    document.title = "Order Confirmation | MovieCart";
   }, []);
 
   // Process order and redirect if necessary

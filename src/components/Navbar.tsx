@@ -64,7 +64,7 @@ const Navbar = () => {
             className="flex items-center space-x-2 text-primary font-semibold text-xl md:text-2xl"
           >
             <Film className="h-6 w-6" />
-            <span className="hidden sm:inline">CinemaVault</span>
+            <span className="hidden sm:inline">MovieCart</span>
           </Link>
 
           {/* Desktop Navigation */}

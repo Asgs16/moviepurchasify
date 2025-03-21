@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Film, Mail, Instagram, Twitter, Facebook } from "lucide-react";
 
@@ -13,7 +12,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center space-x-2 text-primary font-semibold text-xl mb-4">
               <Film className="h-6 w-6" />
-              <span>CinemaVault</span>
+              <span>MovieCart</span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-md">
               Your premium destination for the latest movies. Purchase, collect, and enjoy the best cinema has to offer, all in one convenient place.
@@ -87,12 +86,12 @@ const Footer = () => {
         <div className="mt-12 pt-6 border-t border-muted/20">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-xs text-muted-foreground">
-              &copy; {currentYear} CinemaVault. All rights reserved.
+              &copy; {currentYear} MovieCart. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <a href="mailto:contact@example.com" className="text-xs flex items-center text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="h-3 w-3 mr-1" />
-                contact@cinemavault.com
+                contact@moviecart.com
               </a>
             </div>
           </div>

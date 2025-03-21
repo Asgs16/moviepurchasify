@@ -36,7 +36,7 @@ const RegisterPage = () => {
   
   // Set page title
   useEffect(() => {
-    document.title = "Register | CinemaVault";
+    document.title = "Register | MovieCart";
   }, []);
 
   // Redirect if already authenticated
@@ -90,7 +90,7 @@ const RegisterPage = () => {
         <div className="flex justify-center mb-8">
           <Link to="/" className="flex items-center space-x-2 text-primary font-semibold text-xl">
             <Film className="h-6 w-6" />
-            <span>CinemaVault</span>
+            <span>MovieCart</span>
           </Link>
         </div>
         

@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -13,7 +12,7 @@ const NotFound = () => {
       location.pathname
     );
     
-    document.title = "Page Not Found | CinemaVault";
+    document.title = "Page Not Found | MovieCart";
   }, [location.pathname]);
 
   return (
