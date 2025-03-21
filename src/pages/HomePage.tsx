@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import MovieSlider from "@/components/MovieSlider";
 import { useMovies } from "@/context/MovieContext";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const HomePage = () => {
   const { featuredMovies, newReleases, movies, loading } = useMovies();
@@ -52,13 +54,34 @@ const HomePage = () => {
           <h2 className="text-2xl font-semibold mb-6 text-gradient">All Movies</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
             {movies.map((movie) => (
-              <div key={movie.id} className="h-full">
-                <MovieSlider 
-                  title=""
-                  movies={[movie]}
-                />
-              </div>
+              <Link 
+                key={movie.id} 
+                to={`/movie/${movie.id}`}
+                className="movie-card overflow-hidden rounded-lg border border-border/40 bg-card transform transition-all duration-300"
+              >
+                <div className="relative aspect-[2/3] overflow-hidden">
+                  <img 
+                    src={movie.poster_path} 
+                    alt={movie.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+                    <h3 className="text-sm sm:text-base font-medium line-clamp-1">{movie.title}</h3>
+                    <div className="flex items-center justify-between mt-1">
+                      <span className="text-xs text-white/80">{new Date(movie.release_date).getFullYear()}</span>
+                      <span className="text-xs font-semibold bg-primary/20 px-2 py-0.5 rounded-full backdrop-blur-sm">
+                        ${movie.price.toFixed(2)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Button variant="outline" className="bg-muted/30 border-primary/20 hover:bg-primary/20">
+              View All Movies
+            </Button>
           </div>
         </div>
       </section>
