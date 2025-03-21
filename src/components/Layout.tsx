@@ -7,6 +7,9 @@ import { useEffect } from "react";
 const Layout = () => {
   // Add animation observer for "animate-on-scroll" elements
   useEffect(() => {
+    // Set dark mode on the document
+    document.documentElement.classList.add('dark');
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -27,7 +30,7 @@ const Layout = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Navbar />
       <main className="flex-grow">
         <Outlet />

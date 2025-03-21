@@ -3,19 +3,18 @@ import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import MovieSlider from "@/components/MovieSlider";
 import { useMovies } from "@/context/MovieContext";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const HomePage = () => {
   const { featuredMovies, newReleases, movies, loading } = useMovies();
 
   // Set page title
   useEffect(() => {
-    document.title = "CinemaVault | Premium Movie Shopping";
+    document.title = "MovieCart | Premium Movie Shopping";
   }, []);
 
   if (loading) {
     return (
-      <div className="h-screen flex items-center justify-center">
+      <div className="h-screen flex items-center justify-center bg-background">
         <div className="space-y-4 text-center">
           <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
           <p className="text-muted-foreground">Loading movies...</p>
@@ -25,7 +24,7 @@ const HomePage = () => {
   }
 
   return (
-    <div className="pt-16 md:pt-20"> {/* Padding for fixed header */}
+    <div className="pt-16 md:pt-20 bg-gradient-to-b from-background to-background/95"> {/* Dark gradient background */}
       {/* Hero Section */}
       {featuredMovies.length > 0 && <Hero movie={featuredMovies[0]} />}
       
@@ -50,7 +49,7 @@ const HomePage = () => {
         
         {/* All Movies */}
         <div className="animate-on-scroll">
-          <h2 className="text-2xl font-semibold mb-6">All Movies</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-gradient">All Movies</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
             {movies.map((movie) => (
               <div key={movie.id} className="h-full">
